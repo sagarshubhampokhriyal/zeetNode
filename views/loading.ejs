@@ -1,0 +1,32 @@
+<html>
+<% if(log==0) {%>
+    <%- include('./result.ejs') %>
+        <% } else {%>
+
+
+            <% if(c==-1 && p==-1 && s==-1 ) {%>
+<!DOCTYPE html>
+<html>
+<%- include('./head.ejs') %>
+<body>
+	<div class="loading">
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		Loading..
+	</div>
+</body>
+<script>
+
+    setTimeout(() => {
+        console.log("done")
+        window.location.reload();
+    }, "3000")
+</script>
+</html>
+                <% } else{ %>
+
+                    <%- include('./result.ejs') %>
+                        <% } %>
+
+
+
+                            <% } %>

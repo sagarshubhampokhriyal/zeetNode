@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+
+<%- include('./head.ejs')%>
+
+<body>
+    <div id="signcont">
+    <div class="container">
+        <% if(log==1) {%>
+            <div class="logout"> <a href="/sig=8n">logout<img
+                        src="https://image.freepik.com/free-icon/logout_318-10026.jpg" alt="Lamp" width="15"
+                        height="15"></a></div>
+            <% } %>
+                <form action="/register" method="POST">
+                    <div class="title">Register</div>
+
+                    <div class="input-box underline">
+                        <input type="text" placeholder="Enter Your First Name" name="fname" required>
+                        <div class="underline"></div>
+                    </div>
+                    <div class="input-box underline">
+                        <input type="text" placeholder="Enter Your Second Name" name="sname" required>
+                        <div class="underline"></div>
+                    </div>
+                    <div class="input-box underline">
+                        <input type="text" placeholder="Enter Your Email" name="email" required>
+                        <div class="underline"></div>
+                    </div>
+
+                    <div class="input-box">
+                        <input type="password" placeholder="Enter Your Password" name="password" required>
+                        <div class="underline"></div>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" placeholder="Confirm Password" name="confirmpassword" required>
+                        <div class="underline"></div>
+                    </div>
+                    <% if(errmsg!="" ) {%>
+                        <h5 class="errmg">
+                            <%=errmsg %>
+                        </h5>
+                        <% } %>
+                            <div class="input-box button">
+                                <button id="register" type="submit">Register</button>
+                            </div>
+                            <div class="toggle-link"><a href="/sig=8n"> login</a> </div>
+                </form>
+    </div></div>
+</body>
+
+</html>

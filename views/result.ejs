@@ -1,0 +1,49 @@
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<%- include('./head.ejs')%>
+<body>
+    <%- include('./nav.ejs')%>
+    <div id="signcont">
+    <div class="container">
+        <% if(log==1) {%>
+            <div class="logout"> <a href="/sig=8n">logout<img
+                        src="https://image.freepik.com/free-icon/logout_318-10026.jpg" alt="Lamp" width="15"
+                        height="15"></a></div>
+            <% } %>
+                <% if(log==0) {%>
+                    <h2 id="login_req">please <a href="/sig=8n">sign</a> / <a href="/register">register</a> to see
+                        results</h2>
+                    <% } else {%>
+                        <br>
+                        <h2>Welcome <%=username %>
+                        </h2><br>
+                            <h3 class="res" id="posi">result:</h3>
+                            
+                                
+                                <h3 class="res" id="negi"><%=senti%></h3>
+                                    <% } %>
+                                        <div class="input-box">
+                                            <div class="object">
+                                                <a href="/index"><button id="">Run test again</button></a>
+                                            </div>
+                                        </div>
+                                        Algorithm used : 
+                                        <% if( p==1 ){ %>
+                                            <div class="object">
+                                                <a href="https://www.tensorflow.org/tutorials/images/cnn">Convolutional
+                                                    Neural Network</a>
+        </div>
+        <% } %>
+        <% if(c==1 || s==1 ){ %>
+            <div class="object">
+                <a href="https://www.tensorflow.org/tutorials/images/cnn">Recurent
+                    Neural Network</a>
+</div>
+        <% } %>
+    </div>
+</div>
+</body>
+
+</html>

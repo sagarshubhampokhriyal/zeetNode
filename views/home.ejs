@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<%- include('./head.ejs')%>
+
+<body>
+
+    <%- include('./nav.ejs')%>
+    
+    <div class="container">
+        <% if(log==1) {%>
+            <div class="logout"> <a href="/sig=8n">logout<img
+                        src="https://image.freepik.com/free-icon/logout_318-10026.jpg" alt="Lamp" width="15"
+                        height="15"></a></div>
+            <% } %>
+                <% if(log==0) {%>
+                    <h2 id="login_req">please <a href="/sig=8n">sign</a> / <a href="/register">register</a> to use the
+                        features
+                    </h2>
+                    <% } else {%>
+                        <br>
+                        <h2>Welcome <%=username %>
+                        </h2><br>
+                        <form method="POST" action="/home" enctype="multipart/form-data">
+                            <div class="input-box">
+                                <div class="upload-container">
+                                    <input type="file" id="file_upload"  name="image"/>
+                                     
+                                </div>
+                                <div class="underline"></div>
+                            </div>
+                            <br><br><br><br><br><br><br><br><br><br>
+                            <br><br><br><br>
+                            <div class="input-box">
+                                <input type="submit">
+                                <div class="underline"></div>
+                            </div>
+                        </form>
+                        <% } %>
+    </div>
+
+
+</body>
+
+</html>

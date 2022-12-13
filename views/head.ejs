@@ -1,0 +1,430 @@
+<head>
+    <meta charset="UTF-8">
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            place-items: center;
+            background: linear-gradient(to right, #2be653 0%, #6780ee 100%);
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: antiquewhite;
+            text-transform:uppercase;
+            padding: 7px 13px;
+        }
+        nav{
+            height: 80px;
+            width:100%;
+            background: linear-gradient(to right, #311361 35%, #e6ae47 100%);
+        }
+        label.logo{
+            font-size: 35px;
+            color: antiquewhite;
+            line-height: 80px;
+            padding:0 100px;
+            font-weight: bold;
+        }
+        nav ul{
+            width:60%;
+            display: flex;
+            justify-content: space-between;
+            float:right;
+            margin-right: 20px;
+        }
+        nav ul li{
+            display:inline-block;
+            line-height: 80px;
+            margin: 0 5px;
+        }
+        nav ul li a:hover{
+            transition: 0.2s;
+                letter-spacing: 1px;
+                color: rgb(226, 81, 81);
+        }
+        .checkbtn{
+            font-size: 30px;
+            color:white;
+            float:right;
+            line-height:80x;
+            margin-right:40px;
+            cursor:pointer;
+            display:none;
+        }
+        #check{
+            display: none;
+        }
+        @media(max-width:952px){
+            label.logo{
+                font-size:30px;
+                padding-left: 50px;
+            }
+            nav ul li a{
+                font-size: 16px;
+            }
+        }
+        @media(max-width:998px){
+            .checkbtn{
+                display:block;
+            }
+            nav ul{
+                position: fixed;
+                width:100%;
+                height:100vh;
+                background:#9365dd;
+                top:80px;
+                flex-direction: column;
+                justify-content: space-between;
+                left:-100%;
+
+                text-align:center;
+                transition: all .5s;
+            }
+            nav ul li{
+                display: block;
+                margin: 50px 0;
+                line-height: 30px;
+            }
+            nav ul li a{
+                font-size: 20px;
+            }
+            nav ul li a:hover{
+                transition: 0.2s;
+                letter-spacing: 1px;
+                color: rgb(49, 49, 49);
+            }
+            #check:checked ~ ul{
+                left:0px;
+            }
+            #check:checked ~ .upload-container{
+                display: block;
+            }
+        }
+        #op-container{
+            margin-top: 80px;
+            margin-left:20vw;
+            margin-right: 20vw;
+            /* width: 80%; */
+            display: flex;
+            justify-content: center;
+        }
+        .logout {
+            float: right;
+        }
+
+        .logout a {
+            text-decoration: none;
+            color: white(214, 247, 247);
+            transition: all 0.3s ease;
+        }
+
+        .logout a:hover {
+            letter-spacing: 0.5px;
+            color: rgb(49, 49, 49);
+        }
+        #pnemonia{
+            background-image: url(https://img.freepik.com/free-vector/medical-video-call-consultation-illustration_88138-415.jpg?size=626&ext=jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #0d0d0e;
+            text-shadow: #2be653;
+        }
+        #sentiment{
+            background-image: url(https://imgs.search.brave.com/D-7veYb5hTfWtwpsBNk4p-zHV1EhI68mOsOkD9PBdqA/rs:fit:653:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC4y/SkNqbUU1SDE5b0tC/dU5yRGk5TlhnSGFG/WSZwaWQ9QXBp);
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #e8ecf0;
+            text-shadow: #2be653;
+        }
+        #clickbaith{
+            background-image: url(https://imgs.search.brave.com/oEyupyEiDtVLd0VESXW4thFi-DgBxoCWf49WtwE0Hxs/rs:fit:844:225:1/g:ce/aHR0cHM6Ly90c2Uy/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC4z/MGRyZWMzZ0lCLUlj/M19mb1hETl9BSGFF/SyZwaWQ9QXBp);
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #000000;
+            text-shadow: #2be653;
+        }
+        
+        #op-container a:hover{
+            height: 250px;
+            width:90vw;
+            border-radius: 5px;
+            transition: all 0.7s ease;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        #pnemonia:hover{
+            color: #280753;
+            text-shadow: #222522;
+            letter-spacing: 0.5px;
+            box-shadow: 10px 5px;
+        }
+        #sentiment:hover{
+            color: #dfd5d5;
+            text-shadow: #222522;
+            letter-spacing: 0.5px;
+            box-shadow: 10px 5px;
+        }
+        #clickbaith:hover{
+            color: #280753;
+            text-shadow: #222522;
+            letter-spacing: 0.5px;
+            box-shadow: 10px 5px;
+        }
+        #op-container a{
+            text-decoration: none;
+            height: 200px;
+            width:60vw;
+            margin:10px;
+            border-radius: 5px;
+            text-align: center;
+            text-shadow: #000000 1px;
+        }
+       
+
+        ::selection {
+            background: #ff80bf;
+
+        }
+
+        .container {
+            margin-left: 30%;
+            background: #fff;
+            max-width: 30vw;
+            width: 100%;
+            padding: 25px 30px;
+            border-radius: 5px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
+            
+        }
+        #signcont .container {
+            margin-top: 80px;
+            margin-left: 38%;
+            background: #fff;
+            max-width: 20vw;
+            width: 80%;
+            padding: 25px 30px;
+            border-radius: 5px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
+            
+        }
+        .container form .title {
+            font-size: 30px;
+            font-weight: 600;
+            margin: 20px 0 10px 0;
+            position: relative;
+        }
+        .container form .title:before {
+            content: '';
+            position: absolute;
+            height: 4px;
+            width: 33px;
+            left: 0px;
+            bottom: 3px;
+            border-radius: 5px;
+            background: linear-gradient(to right, #2be653 0%, #6780ee 100%);
+        }
+
+        .container form .input-box {
+            width: 100%;
+            height: 45px;
+            margin-top: 25px;
+        }
+
+        .container form .input-box input {
+            width: 75%;
+            height: 100%;
+            outline: none;
+            font-size: 16px;
+            border: none;
+        }
+
+        .container form .underline::before {
+            content: '';
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background: #ccc;
+            left: 0;
+            bottom: 0;
+        }
+
+        .container form .underline::after {
+            content: '';
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background: linear-gradient(to right, #2be653 0%, #6780ee 100%);
+            left: 0;
+            bottom: 0;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: all 0.3s ease;
+        }
+        .upload-container input {
+        border: 1px solid #92b0b3;
+        background: #f1f1f1;
+        outline: 2px dashed #92b0b3;
+        outline-offset: -10px;
+        padding: 77px 4vw 14vw 4vw;
+        text-align: center !important;
+        width: 25vw;
+    }
+
+        .container form .input-box input:focus~.underline::after,
+        .container form .input-box input:valid~.underline::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .container form .button {
+            margin: 40px 0 20px 0;
+        }
+
+        .container .input-box button[type="submit"] {
+            width: 275px;
+            height: 50px;
+            background: linear-gradient(to right, #2be653 0%, #6780ee 100%);
+            font-size: 17px;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .container .input-box button[type="submit"]:hover {
+            letter-spacing: 1px;
+            background: linear-gradient(to right, #2be653 0%, #6780ee 100%);
+        }
+
+        .container .option {
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .container .input-box input[type="submit"] {
+            background: linear-gradient(to right, #6780ee 0%, #2be653 100%);
+            font-size: 17px;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .container .input-box input[type="submit"]:hover {
+            letter-spacing: 1px;
+            background: linear-gradient(to right, #2be653 0%, #6780ee 100%);
+        }
+
+        .logout {
+            float: right;
+        }
+
+        .logout a {
+            text-decoration: none;
+            color: black;
+            transition: all 0.3s ease;
+        }
+
+        .logout a:hover {
+            letter-spacing: 0.5px;
+            color: rgb(49, 49, 49);
+        }
+        .upload-container:before {
+        top: 126px;
+        left: 3vw;
+        color: #3f8188;
+        font-weight: 900;
+    }
+    .container .input-box button[type="submit"]:hover {
+            letter-spacing: 1px;
+            background: linear-gradient(to right, #6780ee 0%, #2be653 100%);
+        }
+    .upload-container input:hover {
+        background: #ddd;
+    }  
+    .errmg {
+            color: red;
+        }
+        .toggle-link {
+            float: right;
+        }
+        .toggle-link a {
+            text-decoration: none;
+            color: black;
+            transition: all 0.3s ease;
+        }
+        .toggle-link a:hover {
+            letter-spacing: 0.5px;
+            color: rgb(49, 49, 49);
+        }
+        #negi {
+            color: green;
+        }
+
+        #posi {
+            color: red;
+        }
+        .object a{
+            transition: all 0.3s;
+            color: #222522;
+            text-decoration: none;
+        }
+        .object{
+            color:#000000;
+        }
+        .object a:hover{
+            color: #222522;
+            letter-spacing: 0.2px;
+        }
+        .object button{
+            background: linear-gradient(to right, #6780ee 0%, #2be653 100%);
+            border: 0px black;
+            border-radius: 3px;
+            font-size: 30px;
+            transition: all 0.3s;
+        }
+        .object button:hover{
+            background: linear-gradient(to right, #6780ee 3%, #2be653 100%);
+            border: 0px black;
+            border-radius: 3px;
+            font-size: 30px;
+            letter-spacing: 0.5px;
+        }
+        #textArea{
+            text-align: center;
+            width: 100%;
+            height:300px;
+            border-radius: 0.2px;
+        }
+        #textArea:hover{
+            background-color: #ccc;
+            border: 0.2px;
+        }
+        .loading{
+            background:#000 url(https://imgs.search.brave.com/5Btzbb1D27VcE-knCF1Ul0YAvf67G-R9IVR3Pjker5I/rs:fit:1200:1080:1/g:ce/aHR0cDovL2dpZmlt/YWdlLm5ldC93cC1j/b250ZW50L3VwbG9h/ZHMvMjAxNy8wMi9M/b2FkaW5nLUdJRi1J/bWFnZS0xNC5naWY.gif) no-repeat center center;
+
+            width:100%;
+            height: 100vh;
+            position: fixed;
+            z-index: 100;
+            background-size: contain;
+            color: white;
+            text-align: center;
+
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
